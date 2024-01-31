@@ -1,0 +1,16 @@
+{
+  "name": "wsserver",
+  "version": "0.0.1",
+  "description": "web socket",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "author": "Prajwal A",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^3.0.3",
+    "ws": "^8.16.0"
+  }
+}

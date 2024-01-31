@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="main">
+        <div>
+            <p>Hey There from "Web Socket."</p>
+            <input placeholder="Send Message to Server" type="text" />
+            <button>Send</button>
+
+        </div>
+    </div>
+</body>
+<script>
+    const socket = new WebSocket("ws://localhost:5000")
+    socket.onopen = (event) => {
+        console.log('Socket Connected')
+        setTimeout(() => {
+            socket.send("Hey Buddy")
+        })
+    }
+    socket.onmessage = (event) => {
+        console.log(event.data)
+        inputEl.value = event.data
+    }
+    const inputEl = document.querySelector('input')
+    const submitEl = document.querySelector('button')
+    submitEl.addEventListener('click', () => {
+
+        if (inputEl.value) {
+            socket.send(inputEl.value)
+            inputEl.value = ''
+        } else {
+            alert("No Empty value!")
+        }
+    })
+
+</script>
+
+</html>

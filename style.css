@@ -1,0 +1,28 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: darkgrey;
+}
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   height: 100vh;
+}
+input {
+    width: 300px;
+    padding: 0.3rem;
+    outline: none;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: smaller;
+}
+button{
+    background-color: rgb(83, 85, 186);
+    outline: none;
+    border:none;
+    color: white;
+    padding: 0.3rem 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
